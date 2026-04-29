@@ -1,0 +1,186 @@
+ /* Enable Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        /* Header & Avatar Styling */
+        header {
+            background-color: #313e48;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            background-color: #8ed2d4;
+            padding: 10px 20px;
+            color: #313e48;
+        }
+
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-left: 15px;
+            border: 3px solid #313e48;
+            object-fit: cover;
+        }
+
+        nav a {
+            color: #8ed2d4;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        nav a:hover {
+            border-bottom: 2px solid #8ed2d4;
+        }
+
+        /* Hero */
+        .hero {
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 40px;
+        }
+
+        .subtitle-badge {
+            background-color: #8ed2d4;
+            padding: 10px 25px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #313e48;
+            box-shadow: -5px 5px 0px #313e48;
+        }
+
+        /* Layout Grid */
+        .page-section {
+            display: flex;
+            padding: 60px 5%;
+        }
+
+        aside {
+            flex: 1;
+            border-right: 4px solid #313e48;
+            text-align: right;
+            padding-right: 25px;
+        }
+
+        aside h2 {
+            font-size: 2.8rem;
+            color: #313e48;
+        }
+
+        .content {
+            flex: 4;
+            padding-left: 40px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #313e48;
+        }
+
+        /* Work Grid */
+        .work-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .project-card {
+            height: 250px;
+            border: 8px solid #8ed2d4;
+            position: relative;
+            background-color: #313e48;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease, filter 0.3s;
+            display: block;
+            text-decoration: none;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        /* First application is larger */
+        .project-card.large {
+            grid-column: 1 / span 2; 
+            height: 450px;
+        }
+
+        .label {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            background-color: #8ed2d4;
+            padding: 10px 25px;
+            color: #313e48;
+        }
+
+        .label h3 { font-size: 1.5rem; }
+
+        /* Backgrounds for project cards */
+        .surf { background-image: url('https://via.placeholder.com/800x400/313e48/8ed2d4?text=Surf+Report'); }
+        .led { background-image: url('https://via.placeholder.com/400/313e48/8ed2d4?text=LED+Wall'); }
+        .calculator { background-image: url('https://via.placeholder.com/400/313e48/8ed2d4?text=Calculator'); }
+        .puzzles { background-image: url('https://via.placeholder.com/400/313e48/8ed2d4?text=Puzzles'); }
+        .run-buddy { background-image: url('https://via.placeholder.com/400/313e48/8ed2d4?text=Run+Buddy'); }
+
+        /* Contact Links */
+        .contact-links {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-links a {
+            color: #313e48;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 3px solid #313e48;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: #8ed2d4;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media screen and (max-width: 980px) {
+            header { justify-content: center; text-align: center; }
+            .page-section { flex-direction: column; padding: 40px 5%; }
+            aside {
+                text-align: left;
+                border-right: none;
+                border-bottom: 4px solid #313e48;
+                padding: 0 0 10px 0;
+                margin-bottom: 25px;
+            }
+            .content { padding-left: 0; }
+            .work-grid { grid-template-columns: 1fr; }
+            .project-card.large { grid-column: span 1; height: 300px; }
+        }
